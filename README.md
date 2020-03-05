@@ -26,7 +26,25 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Este é um exemplo de API com operações CRUD para manipular dados de supermercados, neste projeto nós utilizamos o Framework TypeScript [Nestjs](https://github.com/nestjs/nest) e o [MongoDB](https://www.mongodb.com/).
+
+## Prerequisites
+Node.js 11.9.0
+NPM 6.5.0
+MongoDB
+
+## Getting started
+Clone this repo to your local machine using https://github.com/Mechanix-Ufscar/web-api.git
+Antes de começar, no terminal de comando verifique as versãos instaladas do Node.js e NPM
+```bash
+$ node --version
+$ npm --version
+```
+
+Altere o arquivo .env com as configurações do MongoDB que está sendo executado em sua maquina, exemplo:
+DB_HOST=localhost
+DB_PORT=27017
+DB_NAME=marcoo
 
 ## Installation
 
@@ -47,10 +65,35 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Support
+O server está rodando corretamente, se no terminal for exibido o log conforme exemplo:
+[Nest] 12028   - 2020-03-05 19:14:23   [NestFactory] Starting Nest application...
+[Nest] 12028   - 2020-03-05 19:14:23   [InstanceLoader] AppModule dependencies initialized +127ms
+[Nest] 12028   - 2020-03-05 19:14:23   [InstanceLoader] MongooseModule dependencies initialized +2ms
+[Nest] 12028   - 2020-03-05 19:14:23   [InstanceLoader] MongooseCoreModule dependencies initialized +94ms
+[Nest] 12028   - 2020-03-05 19:14:23   [InstanceLoader] MongooseModule dependencies initialized +5ms
+[Nest] 12028   - 2020-03-05 19:14:23   [InstanceLoader] SupermarketModule dependencies initialized +3ms
+[Nest] 12028   - 2020-03-05 19:14:23   [RoutesResolver] SupermarketController {/supermarkets}: +31ms
+[Nest] 12028   - 2020-03-05 19:14:23   [RouterExplorer] Mapped {/, GET} route +10ms
+[Nest] 12028   - 2020-03-05 19:14:23   [RouterExplorer] Mapped {/:id, GET} route +17ms
+[Nest] 12028   - 2020-03-05 19:14:23   [RouterExplorer] Mapped {/, POST} route +12ms
+[Nest] 12028   - 2020-03-05 19:14:23   [RouterExplorer] Mapped {/:id, PUT} route +3ms
+[Nest] 12028   - 2020-03-05 19:14:23   [RouterExplorer] Mapped {/:id, DELETE} route +7ms
+[Nest] 12028   - 2020-03-05 19:14:23   [NestApplication] Nest application successfully started +9ms
+
+## Example CRUD Operations
+Create a Supermarket
+
+Get All Supermarkets
+
+Get Supermarket by id
+
+Update Supermarket
+
+Delete Supermarket
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## License
+## Authors
+[Wellington Dias](https://github.com/wellgdias) - Developer
+César Sartori - Scrum Master
 
-  Nest is [MIT licensed](LICENSE).

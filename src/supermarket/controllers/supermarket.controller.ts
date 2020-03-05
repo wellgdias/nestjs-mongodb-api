@@ -17,7 +17,7 @@ export class SupermarketController {
     }
 
     @Post()
-    async createt(@Body() model: SupermarketModel) {
+    async create(@Body() model: SupermarketModel) {
         this.service.create(model);
     }
 
