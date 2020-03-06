@@ -18,18 +18,18 @@
 Este é um exemplo de API para manipular dados de supermercados, neste projeto foi utilizado o Framework TypeScript [Nestjs](https://github.com/nestjs/nest) e o [MongoDB](https://www.mongodb.com/).
 
 ## Pré-requisitos
-Node.js 11.9.0
-NPM 6.5.0
-MongoDB
+Node.js 11.9.0  
+NPM 6.5.0  
+MongoDB  
 
 ## Início
-Realize o Clone deste repositório para a sua maquina uitlizando o endereço https://github.com/wellgdias/nestjs-mongodb-api
-Antes de iniciar, no Prompt de Comando verifique as versões instaladas do Node.js e NPM.
+Realize o Clone deste repositório para a sua maquina uitlizando o endereço https://github.com/wellgdias/nestjs-mongodb-api  
+Antes de iniciar, no Prompt de Comando verifique as versões instaladas do Node.js e NPM  
 ```bash
 $ node --version
 $ npm --version
 ```
-Na pasta do projeto altere o arquivo .env com as configurações do MongoDB que está sendo executado em sua maquina, substitua os valores conforme exemplo:
+Na pasta do projeto altere o arquivo .env com as configurações do MongoDB que está sendo executado em sua maquina, substitua os valores, exemplo
 ````
 DB_HOST=localhost
 DB_PORT=27017
@@ -55,7 +55,7 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-O server está rodando corretamente, se no terminal for exibido o seguinte log conforme exemplo:
+O server está rodando corretamente, se no terminal for exibido o seguinte log, exemplo
 ```
 [Nest] 12028   - 2020-03-05 19:14:23   [NestFactory] Starting Nest application...
 [Nest] 12028   - 2020-03-05 19:14:23   [InstanceLoader] AppModule dependencies initialized +127ms
