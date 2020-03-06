@@ -12,48 +12,38 @@
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+</p> 
 
-## Description
+## Descrição
+Este é um exemplo de API para manipular dados de supermercados, neste projeto foi utilizado o Framework TypeScript [Nestjs](https://github.com/nestjs/nest) e o [MongoDB](https://www.mongodb.com/).
 
-Este é um exemplo de API com operações CRUD para manipular dados de supermercados, neste projeto nós utilizamos o Framework TypeScript [Nestjs](https://github.com/nestjs/nest) e o [MongoDB](https://www.mongodb.com/).
-
-## Prerequisites
+## Pré-requisitos
 Node.js 11.9.0
 NPM 6.5.0
 MongoDB
 
-## Getting started
-Clone this repo to your local machine using https://github.com/Mechanix-Ufscar/web-api.git
-Antes de começar, no terminal de comando verifique as versãos instaladas do Node.js e NPM
+## Início
+Realize o Clone deste repositório para a sua maquina uitlizando o endereço https://github.com/wellgdias/nestjs-mongodb-api
+Antes de iniciar, no Prompt de Comando verifique as versões instaladas do Node.js e NPM.
 ```bash
 $ node --version
 $ npm --version
 ```
-
-Altere o arquivo .env com as configurações do MongoDB que está sendo executado em sua maquina, exemplo:
+Na pasta do projeto altere o arquivo .env com as configurações do MongoDB que está sendo executado em sua maquina, substitua os valores conforme exemplo:
+````
 DB_HOST=localhost
 DB_PORT=27017
 DB_NAME=marcoo
+````
 
-## Installation
-
+## Instalação
+Execute o seguinte comando para instalar todas as dependências deste projeto
 ```bash
 $ npm install
 ```
 
-## Running the app
-
+## Executando a aplicação
+Para iniciar a aplicação, você pode executar os seguintes comandos
 ```bash
 # development
 $ npm run start
@@ -65,7 +55,8 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-O server está rodando corretamente, se no terminal for exibido o log conforme exemplo:
+O server está rodando corretamente, se no terminal for exibido o seguinte log conforme exemplo:
+```
 [Nest] 12028   - 2020-03-05 19:14:23   [NestFactory] Starting Nest application...
 [Nest] 12028   - 2020-03-05 19:14:23   [InstanceLoader] AppModule dependencies initialized +127ms
 [Nest] 12028   - 2020-03-05 19:14:23   [InstanceLoader] MongooseModule dependencies initialized +2ms
@@ -79,21 +70,124 @@ O server está rodando corretamente, se no terminal for exibido o log conforme e
 [Nest] 12028   - 2020-03-05 19:14:23   [RouterExplorer] Mapped {/:id, PUT} route +3ms
 [Nest] 12028   - 2020-03-05 19:14:23   [RouterExplorer] Mapped {/:id, DELETE} route +7ms
 [Nest] 12028   - 2020-03-05 19:14:23   [NestApplication] Nest application successfully started +9ms
+```
 
-## Example CRUD Operations
-Create a Supermarket
+## Exemplos de uso da API
+A API está trabalhando somente com a modelagem de supermercado, porém para criar outras entidades será utilizado o mesmo padrão de projeto.
 
-Get All Supermarkets
+O modelo de Supermercado segue o seguinte Schema
+```ts
+{
+    name: String,
+    address: String,
+    phone: String,
+    latitude: Number,
+    longitude: Number,
+}
+```
+A aplicação deverá estar sendo executada, o caminho padrão é http://localhost:3000/supermarkets
+### POST
+Para inserir um registro, execute o seguinte comando
+```
+POST /supermarkets
+```
+Enviando o JSON 
+```json
+  {
+    "name": "Assaí Atacadista",
+    "address": "Rodovia Raposo Tavares, KM 99 - Vila Artura, Sorocaba - SP, 18023-000",
+    "phone": "(15) 3388-3006",
+    "latitude": null,
+    "longitude": null
+  }
+```
 
-Get Supermarket by id
+### GET
+Para buscar todos os supermercados, execute o seguinte comando
+```
+GET /supermarkets
+```
+Será retornado um JSON com todos os supermercados cadastrados, exemplo
+```json
+[
+  {
+    "_id": "5e60e36a3ba8d00c50baa132",
+    "name": "Hipermercado Extra - Campolim",
+    "address": "R. Maria Aparecida Pessutti Milego, 250 - Parque Campolim, Sorocaba - SP, 18048-140",
+    "phone": "(15) 3234-9300",
+    "latitude": 1,
+    "longitude": 2,
+    "__v": 0
+  },
+  {
+    "_id": "5e6177ce27096513948278e8",
+    "name": "Assaí Atacadista",
+    "address": "Rodovia Raposo Tavares, KM 99 - Vila Artura, Sorocaba - SP, 18023-000",
+    "phone": "(15) 3388-3006",
+    "latitude": null,
+    "longitude": null,
+    "__v": 0
+  }
+]
+```
+### GET ById
+Para buscar um supermercado específico, execute o seguinte comando substituindo o <id> pelo id cadastrado no seu banco
+```
+GET /supermarkets/<id>
+```
+Será retornado um JSON com o supermercado do <id> informado, exemplo http://localhost:3000/supermarkets/5e60e36a3ba8d00c50baa132
+```json
+{
+  "_id": "5e60e36a3ba8d00c50baa132",
+  "name": "Hipermercado Extra - Campolim",
+  "address": "R. Maria Aparecida Pessutti Milego, 250 - Parque Campolim, Sorocaba - SP, 18048-140",
+  "phone": "(15) 3234-9300",
+  "latitude": 1,
+  "longitude": 2,
+  "__v": 0
+}
+```
+### UPDATE
+Para alterar qualquer informação de um supermercado que esteja cadastrado, execute o seguinte comando substituindo o <id> pelo id cadastrado no seu banco
+```
+PUT /supermarkets/<id>
+```
+Enviando o JSON com os dados alterados do supermercado
+```json
+{
+  "name": "Hipermercado Extra",
+  "address": "R. Maria Aparecida Pessutti Milego, 250 - Parque Campolim, Sorocaba - SP, 18048-140",
+  "phone": "(15) 3234-9300",
+  "latitude": 2,
+  "longitude": 1 
+}
+```
+Será retornado um JSON com os dados do supermercado que foi alterado
+```json
+{
+  "_id": "5e61b93db273d4198869d090",
+  "name": "Hipermercado Extra",
+  "address": "R. Maria Aparecida Pessutti Milego, 250 - Parque Campolim, Sorocaba - SP, 18048-140",
+  "phone": "(15) 3234-9300",
+  "latitude": 2,
+  "longitude": 1,
+  "__v": 0
+}
+```
 
-Update Supermarket
+### DELETE
+Para excluir um supermercado, execute o seguinte comando substituindo o <id> pelo id cadastrado no seu banco
+```
+DELETE /supermarkets/<id>
+```
+Será retonado um JSON informando que a exlcusão ocorreu com sucesso e exibido a quantidade de registros excluídos
+```json
+{
+  "n": 1,
+  "ok": 1,
+  "deletedCount": 1
+}
+```
 
-Delete Supermarket
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Authors
-[Wellington Dias](https://github.com/wellgdias) - Developer
-César Sartori - Scrum Master
 
