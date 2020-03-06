@@ -131,11 +131,11 @@ Será retornado um JSON com todos os supermercados cadastrados, exemplo
 ]
 ```
 ### GET ById
-Para buscar um supermercado específico, execute o seguinte comando substituindo o <id> pelo id cadastrado no seu banco
+Para buscar um supermercado específico, execute o seguinte comando substituindo o id por um cadastrado no seu banco
 ```
 GET /supermarkets/<id>
 ```
-Será retornado um JSON com o supermercado do <id> informado, exemplo http://localhost:3000/supermarkets/5e60e36a3ba8d00c50baa132
+Será retornado um JSON com o supermercado do id informado, exemplo http://localhost:3000/supermarkets/5e60e36a3ba8d00c50baa132
 ```json
 {
   "_id": "5e60e36a3ba8d00c50baa132",
@@ -148,7 +148,7 @@ Será retornado um JSON com o supermercado do <id> informado, exemplo http://loc
 }
 ```
 ### UPDATE
-Para alterar qualquer informação de um supermercado que esteja cadastrado, execute o seguinte comando substituindo o <id> pelo id cadastrado no seu banco
+Para alterar qualquer informação de um supermercado que esteja cadastrado, execute o seguinte comando substituindo o id por um cadastrado no seu banco
 ```
 PUT /supermarkets/<id>
 ```
@@ -176,7 +176,7 @@ Será retornado um JSON com os dados do supermercado que foi alterado
 ```
 
 ### DELETE
-Para excluir um supermercado, execute o seguinte comando substituindo o <id> pelo id cadastrado no seu banco
+Para excluir um supermercado, execute o seguinte comando substituindo o id por um cadastrado no seu banco
 ```
 DELETE /supermarkets/<id>
 ```
